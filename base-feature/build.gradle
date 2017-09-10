@@ -4,6 +4,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
 
+    baseFeature true
 
     defaultConfig {
         minSdkVersion 23
@@ -25,7 +26,10 @@ android {
 }
 
 dependencies {
+    api 'com.android.support:appcompat-v7:26.0.2'
+    api 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation project(':base-feature')
+    application project(':app')
+    feature project(":first-feature")
 }
